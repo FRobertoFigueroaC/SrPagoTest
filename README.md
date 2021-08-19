@@ -27,8 +27,10 @@ Para el funcionamiento de este proyecto son necesarios:
 - Correr las migraciones con el comando `php artisan migrate`
 - Poblar la base de datos con el siguiente comando  `php artisan generate:setDatabase`
 - Levantar el servidor de la aplicación con `php artisan serve`
+- La aplicación será ejecutada en  `http://127.0.0.1:8000`
 
 
 ### Consideraciones
 
 - Si desea cambiar el nombre de la base de datos  **_srpago_** por algun otro deberá especificar lo en el campo `DB_DATABASE` del archivo   **_.env_**
+

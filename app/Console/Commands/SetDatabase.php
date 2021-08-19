@@ -45,8 +45,6 @@ class SetDatabase extends Command
         Municipality::query()->delete();
         $this->info('Reset de tablas.');
 
-
-//        Excel::import(new AllSheetsStatesExcelImport, 'Excel/cps.xlsx', 'public');
         Excel::import(new AllSheetsStatesExcelImport,  public_path('Excel/cps.xlsx'));
 
         $this->info('Creación de estados exitosa.');

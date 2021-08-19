@@ -37,7 +37,6 @@ class MunicipalitiesExcelImport implements ToCollection
                     'state_id'  => $this->stateId,
                 ]);
 
-//                dd([$row], $this->stateId, $municipality);
             }
         }
     }

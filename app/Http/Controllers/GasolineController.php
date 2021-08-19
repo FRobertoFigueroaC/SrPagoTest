@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Municipality;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -33,10 +34,25 @@ class GasolineController extends Controller
             ->get($url);
 
         if ($response->successful()){
+            /*
+             * Obteniendo Estado y Municipio por medio de Cp
+             */
+
             $results = $response->json();
+            $api_responses = [];
+            $municipality = Municipality::where('cp', $zipCode)->with('states')->first();
+            foreach ($results['results'] as $result){
+                $result['estado'] = $municipality['states']['name'];
+                $result['municipio'] = $municipality['name'];
+
+                array_push($api_responses,$result);
+            }
+
+
+
             return response()->json([
-                "success" => true,
-                "results" => $results['results'],
+                "success"       => true,
+                "results"       => $api_responses,
             ], 200);
         } else {
             return response()->json([

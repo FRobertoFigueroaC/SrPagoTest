@@ -9,6 +9,11 @@ Para el funcionamiento de este proyecto son necesarios:
 - **Tener una versión de PHP ^7.3|^8.0**
 
 
+# Proyecto frontend (Angular)
+
+https://github.com/FRobertoFigueroaC/SrPagoTest
+
+
 ### Instrucciones
 
 - Clonar el repositorio
